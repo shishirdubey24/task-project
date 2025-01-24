@@ -1,0 +1,341 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    margin: 0;
+   
+    font-family: Arial, sans-serif;
+ 
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+  }
+ 
+
+  .form-container {
+    width: 470px;
+   
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    transform: translateY(0);
+  }
+  
+  /* Animation for the form container */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .btn-primary {
+    background-color: #4facfe;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #00c3ff;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .forgot-password a {
+    color: #4facfe;
+    text-decoration: none;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 20px;
+    }
+    .form-control {
+      font-size: 14px;
+    }
+    .btn-primary {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  /* Student container Container Styling */
+.container {
+    max-width: 1200px;
+    height: 90vh;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  /* Table Styling */
+  .table {
+    width: 100%;
+    height: 10vh;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.7s ease-in-out;
+  }
+  
+  .table th,
+  .table td {
+    text-align: center;
+    padding: 12px 15px;
+    vertical-align: middle;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:hover {
+    background-color: #f0f8ff;
+  }
+  
+  /* Button Styling */
+  .btn {
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Modal Styling */
+  .modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+  }
+  
+  .modal-dialog {
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-body {
+    padding: 10px 0;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      margin: 20px auto;
+      padding: 15px;
+    }
+  
+    .table {
+      font-size: 14px;
+    }
+  
+    .btn {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  
+    .modal-dialog {
+      max-width: 90%;
+    }
+  }
+  .App {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Adjust content when the sidebar is shown */
+  .auth-content.with-sidebar {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+     height: 100vh;
+  }
+  
+  /* Center content when no sidebar is shown */
+  .auth-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .auth-content.with-sidebar {
+      margin-left: 200px;
+    }
+  }
+  
+  /* Sidebar */
+
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+   
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.8s ease-in-out;
+   
+  }
+  
+  .sidebar-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sidebar-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-list li {
+    margin: 15px 0;
+  }
+  
+  .sidebar-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .sidebar-link {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  }
+  
