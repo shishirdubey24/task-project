@@ -36,24 +36,37 @@ const Student = () => {
   };
 
   const handleSubmit = async () => {
-    await addDoc(studentsCollection, formData);
-    setFormData({
-      name: "",
-      class: "",
-      section: "",
-      rollNumber: "",
-      age: "",
-      address: "",
-      contact: "",
-      email: "",
-      guardian: "",
-      admissionDate: "",
-      grade: "",
-      remarks: "",
-    });
-    setShowModal(false);
-    window.location.reload(); // Refresh page to fetch updated list
+    // Validate all fields
+    const isFormValid = Object.values(formData).every((value) => value.trim() !== "");
+    if (!isFormValid) {
+      alert("Please fill in all fields before submitting.");
+      return;
+    }
+  
+    try {
+      await addDoc(studentsCollection, formData);
+      setFormData({
+        name: "",
+        class: "",
+        section: "",
+        rollNumber: "",
+        age: "",
+        address: "",
+        contact: "",
+        email: "",
+        guardian: "",
+        admissionDate: "",
+        grade: "",
+        remarks: "",
+      });
+      setShowModal(false);
+      window.location.reload(); // Refresh page to fetch updated list
+    } catch (error) {
+      console.error("Error adding student: ", error);
+      alert("There was an error saving the student. Please try again.");
+    }
   };
+  
 
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, "students", id));
@@ -139,6 +152,7 @@ const Student = () => {
                         value={formData[key]}
                         onChange={handleChange}
                         placeholder={`Enter ${key}`}
+                        required
                       />
                     </div>
                   ))}
